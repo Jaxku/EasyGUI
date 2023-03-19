@@ -17,7 +17,7 @@ while True:
         score = 0
 
         while dice_rolls < 3:
-        # list to record the numbers on the 5 dice each roll
+            # list to record the numbers on the 5 dice each roll
         dice = []
 
         dice_rolls += 1
@@ -69,5 +69,17 @@ while True:
         result = f"The winner is {players[0][0]} with a score of" \
         f" {players[0][1]}\n\n{players[0][0]} scored {players[1][1]}"
         # Or, it will be a player 2 win
-        
+    else:
+        result =f"The winner is {players[1][0]} with a score of" \
+        f"{players[1][1]}\n\n{players[0][0]} scored {players[0][1]}"
+
+    # if the player wants to play another round.
+    play_again = easygui.buttonbox(f"Will you like to play another round?", choices=["Yes", "No"])
+
+    if play_again == "Yes":
+        score = 0 # Need to reset the score to 0
+    else:
+        break # Game over
+
+easygui.msgbox("Thanks for playing")
 
